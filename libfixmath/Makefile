@@ -5,11 +5,20 @@ SRC = .
 INC =
 
 #Compiler settings
-CPP = gcc
-CC = gcc
-AS = gcc
-LD = gcc
-AR = ar
+#CPP = gcc
+#CC = gcc
+#AS = gcc
+#LD = gcc
+#AR = ar
+
+#PRE = avr
+PRE = arm-none-eabi
+CPP = $(PRE)-gcc
+CC = $(PRE)-gcc
+AS = $(PRE)-gcc
+LD = $(PRE)-gcc
+AR = $(PRE)-ar
+
 CPP_FLAGS = -O2 $(INC) -Wall -Wextra -c
 CC_FLAGS  = -O2 $(INC) -Wall -Wextra -c
 AS_FLAGS  = $(CC_FLAGS) -D_ASSEMBLER_
